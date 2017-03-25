@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1FF87A401E871FB500378C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A3F1E871FB500378C12 /* AppDelegate.swift */; };
-		1FF87A421E871FB500378C12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A411E871FB500378C12 /* ViewController.swift */; };
 		1FF87A451E871FB500378C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF87A431E871FB500378C12 /* Main.storyboard */; };
 		1FF87A481E871FB500378C12 /* EntriesWithIntercom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A461E871FB500378C12 /* EntriesWithIntercom.xcdatamodeld */; };
 		1FF87A4A1E871FB500378C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF87A491E871FB500378C12 /* Assets.xcassets */; };
@@ -18,6 +17,10 @@
 		1FF87A711E87206C00378C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FF87A701E87206C00378C12 /* GoogleService-Info.plist */; };
 		1FF87A721E87208300378C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FF87A701E87206C00378C12 /* GoogleService-Info.plist */; };
 		1FF87A731E87208300378C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FF87A701E87206C00378C12 /* GoogleService-Info.plist */; };
+		1FF87A751E8723EE00378C12 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A741E8723EE00378C12 /* SignInViewController.swift */; };
+		1FF87A771E87267B00378C12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A761E87267B00378C12 /* SignUpViewController.swift */; };
+		1FF87A791E8727EA00378C12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A781E8727EA00378C12 /* MainViewController.swift */; };
+		1FF87A7B1E87280600378C12 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF87A7A1E87280600378C12 /* SettingsViewController.swift */; };
 		31CAA81D5D94086BD08B3FC1 /* Pods_EntriesWithIntercom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03E35619BEEBE2AC62385A5 /* Pods_EntriesWithIntercom.framework */; };
 		56A09F950E15C0E4C842F949 /* Pods_EntriesWithIntercomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3F3489CA6D641633A5CF6A /* Pods_EntriesWithIntercomUITests.framework */; };
 		9D815BCD69501288497E5B22 /* Pods_EntriesWithIntercomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A3306657FA6EFE444DAA4A /* Pods_EntriesWithIntercomTests.framework */; };
@@ -44,7 +47,6 @@
 		021410FAF34B53DFB78A8634 /* Pods-EntriesWithIntercomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntriesWithIntercomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EntriesWithIntercomTests/Pods-EntriesWithIntercomTests.release.xcconfig"; sourceTree = "<group>"; };
 		1FF87A3C1E871FB500378C12 /* EntriesWithIntercom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntriesWithIntercom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF87A3F1E871FB500378C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FF87A411E871FB500378C12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FF87A441E871FB500378C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FF87A471E871FB500378C12 /* EntriesWithIntercom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EntriesWithIntercom.xcdatamodel; sourceTree = "<group>"; };
 		1FF87A491E871FB500378C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		1FF87A621E871FB500378C12 /* EntriesWithIntercomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesWithIntercomUITests.swift; sourceTree = "<group>"; };
 		1FF87A641E871FB500378C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF87A701E87206C00378C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FF87A741E8723EE00378C12 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1FF87A761E87267B00378C12 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1FF87A781E8727EA00378C12 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1FF87A7A1E87280600378C12 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8F90CFAA742133A26C85063D /* Pods-EntriesWithIntercomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntriesWithIntercomUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EntriesWithIntercomUITests/Pods-EntriesWithIntercomUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD87B04203297FEBF716525 /* Pods-EntriesWithIntercomUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntriesWithIntercomUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EntriesWithIntercomUITests/Pods-EntriesWithIntercomUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C2A240F4504AF731AAEDADFC /* Pods-EntriesWithIntercomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntriesWithIntercomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EntriesWithIntercomTests/Pods-EntriesWithIntercomTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +133,10 @@
 				1FF87A4E1E871FB500378C12 /* Info.plist */,
 				1FF87A4B1E871FB500378C12 /* LaunchScreen.storyboard */,
 				1FF87A431E871FB500378C12 /* Main.storyboard */,
-				1FF87A411E871FB500378C12 /* ViewController.swift */,
+				1FF87A781E8727EA00378C12 /* MainViewController.swift */,
+				1FF87A7A1E87280600378C12 /* SettingsViewController.swift */,
+				1FF87A741E8723EE00378C12 /* SignInViewController.swift */,
+				1FF87A761E87267B00378C12 /* SignUpViewController.swift */,
 			);
 			path = EntriesWithIntercom;
 			sourceTree = "<group>";
@@ -460,9 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF87A421E871FB500378C12 /* ViewController.swift in Sources */,
 				1FF87A401E871FB500378C12 /* AppDelegate.swift in Sources */,
 				1FF87A481E871FB500378C12 /* EntriesWithIntercom.xcdatamodeld in Sources */,
+				1FF87A771E87267B00378C12 /* SignUpViewController.swift in Sources */,
+				1FF87A751E8723EE00378C12 /* SignInViewController.swift in Sources */,
+				1FF87A791E8727EA00378C12 /* MainViewController.swift in Sources */,
+				1FF87A7B1E87280600378C12 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +731,7 @@
 				1FF87A691E871FB500378C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FF87A6A1E871FB500378C12 /* Build configuration list for PBXNativeTarget "EntriesWithIntercomTests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +740,7 @@
 				1FF87A6C1E871FB500378C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FF87A6D1E871FB500378C12 /* Build configuration list for PBXNativeTarget "EntriesWithIntercomUITests" */ = {
 			isa = XCConfigurationList;
@@ -735,6 +749,7 @@
 				1FF87A6F1E871FB500378C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
