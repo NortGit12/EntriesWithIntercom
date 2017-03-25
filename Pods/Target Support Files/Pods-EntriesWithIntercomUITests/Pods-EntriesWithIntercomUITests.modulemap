@@ -1,0 +1,6 @@
+framework module Pods_EntriesWithIntercomUITests {
+  umbrella header "Pods-EntriesWithIntercomUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
