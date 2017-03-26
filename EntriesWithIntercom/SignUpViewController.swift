@@ -29,8 +29,19 @@ class SignUpViewController: UIViewController {
             , let email = emailTextField.text
             , let password = passwordTextField.text {
             
-            FormManager.evaluateTextFieldsForEmptiness(textFields: [nameTextField, emailTextField, passwordTextField, confirmPasswordTextField], viewController: self)
-            FormManager.evaluateMatchingPasswordTextFields(passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField, viewController: self)
+            let empytyTextFields = FormManager.findEmptyTextFields([nameTextField, emailTextField, passwordTextField, confirmPasswordTextField])
+            if empytyTextFields.count > 0 {
+                
+                FormManager.displayEmptyTextFieldsAlert(empytyTextFields, viewController: self)
+                return
+            }
+            
+            if FormManager.passwordAndConfirmPasswordTextFieldsMatch(passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField) == false {
+                
+                FormManager.displayPasswordDontMatchAlert(self)
+                return
+            }
+            
             FormManager.resetForm(textFields: [nameTextField, emailTextField, passwordTextField, confirmPasswordTextField], firstResponder: nameTextField)
             
             // Create the user in Firebase

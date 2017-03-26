@@ -15,19 +15,24 @@ class FormManager {
     // MARK: - Methods
     //==================================================
     
-    static func evaluateTextFieldsForEmptiness(textFields: [UITextField], viewController: UIViewController) {
+    static func findEmptyTextFields(_ textFields: [UITextField]) -> [String] {
         
-        var emptyTextFields = [UITextField]()
+        var emptyTextFields = [String]()
         for textField in textFields {
             if let text = textField.text {
                 if text.isEmpty {
-                    emptyTextFields.append(textField)
+                    emptyTextFields.append(textField.restorationIdentifier!)
                 }
             }
         }
+    
+        return emptyTextFields
+    }
+    
+    static func displayEmptyTextFieldsAlert(_ emptyTextFields: [String], viewController: UIViewController) {
         
         if emptyTextFields.count > 0 {
-            let emptyTextFieldsAlertController = UIAlertController(title: "Missing Required Information", message: "All text fields must have values, but the following are empty: \(emptyTextFields).  Make sure they all have values and try again.", preferredStyle: .alert)
+            let emptyTextFieldsAlertController = UIAlertController(title: "Missing Required Information", message: "All text fields must have values, but the following are empty: \(emptyTextFields.joined(separator: ", ")).  Make sure they all have values and try again.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             emptyTextFieldsAlertController.addAction(okAction)
             
@@ -35,16 +40,21 @@ class FormManager {
         }
     }
     
-    static func evaluateMatchingPasswordTextFields(passwordTextField: UITextField, confirmPasswordTextField: UITextField, viewController: UIViewController) {
+    static func passwordAndConfirmPasswordTextFieldsMatch(passwordTextField: UITextField, confirmPasswordTextField: UITextField) -> Bool {
         
         if passwordTextField.text != confirmPasswordTextField.text {
-            
-            let nonMatchingPasswordsAlertController = UIAlertController(title: "Non-matching Passwords", message: "Passwords must match.  Try again.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            nonMatchingPasswordsAlertController.addAction(okAction)
-            
-            viewController.present(nonMatchingPasswordsAlertController, animated: true, completion: nil)
+            return false
+        } else {
+            return true
         }
+    }
+    
+    static func displayPasswordDontMatchAlert(_ viewController: UIViewController) {
+        let nonMatchingPasswordsAlertController = UIAlertController(title: "Non-matching Passwords", message: "Passwords must match.  Try again.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        nonMatchingPasswordsAlertController.addAction(okAction)
+        
+        viewController.present(nonMatchingPasswordsAlertController, animated: true, completion: nil)
     }
     
     static func resetForm(textFields: [UITextField], firstResponder: UITextField) {

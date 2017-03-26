@@ -26,7 +26,12 @@ class SignInViewController: UIViewController {
         if let email = emailTextField.text
             , let password = passwordTextField.text {
             
-            FormManager.evaluateTextFieldsForEmptiness(textFields: [emailTextField, passwordTextField], viewController: self)
+            let empytyTextFields = FormManager.findEmptyTextFields([emailTextField, passwordTextField])
+            if empytyTextFields.count > 0 {
+                FormManager.displayEmptyTextFieldsAlert(empytyTextFields, viewController: self)
+                return
+            }
+            
             FormManager.resetForm(textFields: [emailTextField, passwordTextField], firstResponder: emailTextField)
             
             FirebaseManager.signInWithEmail(email, password: password, viewController: self) {

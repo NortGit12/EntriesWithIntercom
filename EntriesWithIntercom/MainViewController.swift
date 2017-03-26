@@ -23,7 +23,19 @@ class MainViewController: UIViewController {
     //==================================================
     
     @IBAction func enterButtonTapped(_ sender: UIButton) {
-        
+        if let text = textField.text {
+            if text.isEmpty {
+                let emptyTextAlertController = UIAlertController(title: "Emtpy", message: "Enter some text to display", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                emptyTextAlertController.addAction(okAction)
+                present(emptyTextAlertController, animated: true, completion: nil)
+                return
+            }
+            
+            textField.text = ""
+            textField.resignFirstResponder()
+            textView.text = text
+        }
     }
     
     //==================================================

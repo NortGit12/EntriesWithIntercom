@@ -52,12 +52,10 @@ class FirebaseManager {
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 errorAlertController.addAction(okAction)
                 viewController.present(errorAlertController, animated: true, completion: nil)
-                
-                if let completion = completion {
-                    completion()
-                }
-                
-                return
+            }
+            
+            if let completion = completion {
+                completion()
             }
         })
     }
