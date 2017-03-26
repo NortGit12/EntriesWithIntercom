@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jeff Norton. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 class SettingsViewController: UIViewController {
@@ -20,6 +21,16 @@ class SettingsViewController: UIViewController {
     
     @IBAction func signOutButtonTapped(_ sender: UIButton) {
         
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInViewController")
+            present(signInViewController, animated: true, completion: nil)
+        } catch let error as NSError {
+            NSLog("Error signing out: \(error.localizedDescription)")
+            return
+        }
     }
     
     //==================================================

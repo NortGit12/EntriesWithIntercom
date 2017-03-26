@@ -23,6 +23,17 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
+        if let email = emailTextField.text
+            , let password = passwordTextField.text {
+            
+            FormManager.evaluateTextFieldsForEmptiness(textFields: [emailTextField, passwordTextField], viewController: self)
+            FormManager.resetForm(textFields: [emailTextField, passwordTextField], firstResponder: emailTextField)
+            
+            FirebaseManager.signInWithEmail(email, password: password, viewController: self) {
+                
+                TransitionManager.transitionToViewController(sourceViewController: self, destinationStoryboardName: "Main", destinationViewControllerIdentifier: "MainViewNagivationController")
+            }
+        }
     }
     
     //==================================================

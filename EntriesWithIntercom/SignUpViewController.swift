@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jeff Norton. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 class SignUpViewController: UIViewController {
@@ -24,7 +25,38 @@ class SignUpViewController: UIViewController {
     //==================================================
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        
+        if let name = nameTextField.text
+            , let email = emailTextField.text
+            , let password = passwordTextField.text {
+            
+            FormManager.evaluateTextFieldsForEmptiness(textFields: [nameTextField, emailTextField, passwordTextField, confirmPasswordTextField], viewController: self)
+            FormManager.evaluateMatchingPasswordTextFields(passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField, viewController: self)
+            FormManager.resetForm(textFields: [nameTextField, emailTextField, passwordTextField, confirmPasswordTextField], firstResponder: nameTextField)
+            
+            // Create the user in Firebase
+            FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
+                FirebaseManager.evaluateCreateUserError(error, viewController: self)
+                
+                // Add some extra profile details
+                let userProfileData = [
+                    "email": email
+                    , "name": name
+                ]
+                
+                // Add user profile 
+                if let user = user {
+                    
+                    let usersRef = FIRDatabase.database().reference().child("users")
+                    usersRef.child(user.uid).setValue(userProfileData)
+                    
+                    // Sign in
+                    FirebaseManager.signInWithEmail(email, password: password, viewController: self) {
+                        
+                        TransitionManager.transitionToViewController(sourceViewController: self, destinationStoryboardName: "Main", destinationViewControllerIdentifier: "MainViewNagivationController")
+                    }
+                }
+            })
+        }
     }
     
     //==================================================
@@ -34,7 +66,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.nameTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

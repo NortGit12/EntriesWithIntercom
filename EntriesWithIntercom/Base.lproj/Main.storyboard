@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="wrW-Hy-Vrg">
             <objects>
-                <viewController id="Abd-18-uy0" customClass="SignInViewController" customModule="EntriesWithIntercom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="Abd-18-uy0" customClass="SignInViewController" customModule="EntriesWithIntercom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sv7-Iv-DjB"/>
                         <viewControllerLayoutGuide type="bottom" id="4M7-vW-Scd"/>
@@ -32,7 +32,7 @@
                                 <rect key="frame" x="28" y="332" width="319" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entries with Intercom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIg-E0-6F0">
                                 <rect key="frame" x="38" y="120" width="300" height="62"/>
@@ -126,13 +126,13 @@
                                 <rect key="frame" x="12" y="322" width="351" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRp-x4-dTK">
                                 <rect key="frame" x="12" y="372" width="351" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-aA-X64">
                                 <rect key="frame" x="158" y="432" width="60" height="30"/>
@@ -144,7 +144,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="b6l-BE-zs0" eventType="touchUpInside" id="Zk7-7u-dvy"/>
-                                    <segue destination="k1x-cg-NUP" kind="show" id="eqc-H6-C43"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eH-K5-p3o">
@@ -199,7 +198,7 @@
         <!--Main-->
         <scene sceneID="n3c-jH-rBj">
             <objects>
-                <viewController id="hnl-at-qTe" customClass="MainViewController" customModule="EntriesWithIntercom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="hnl-at-qTe" customClass="MainViewController" customModule="EntriesWithIntercom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="teq-yZ-sPa"/>
                         <viewControllerLayoutGuide type="bottom" id="R4Y-gG-HKt"/>
@@ -308,7 +307,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ksY-Zt-UqV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k1x-cg-NUP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainViewNagivationController" automaticallyAdjustsScrollViewInsets="NO" id="k1x-cg-NUP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B5V-bB-wHI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -324,7 +323,4 @@
             <point key="canvasLocation" x="413.60000000000002" y="765.96701649175418"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eqc-H6-C43"/>
-    </inferredMetricsTieBreakers>
 </document>
