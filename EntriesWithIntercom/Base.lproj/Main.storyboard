@@ -234,6 +234,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed In User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-cu-aVh">
+                                <rect key="frame" x="8" y="644" width="359" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -241,9 +247,12 @@
                             <constraint firstItem="Dfv-tr-73M" firstAttribute="leading" secondItem="eAj-Pf-Pdh" secondAttribute="leading" constant="12" id="Amp-jQ-n4a"/>
                             <constraint firstItem="2hi-g2-1mv" firstAttribute="centerX" secondItem="eAj-Pf-Pdh" secondAttribute="centerX" id="ES3-UZ-I2a"/>
                             <constraint firstItem="brm-Xp-0cK" firstAttribute="top" secondItem="Dfv-tr-73M" secondAttribute="bottom" constant="20" id="HTF-KT-BMx"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ea-cu-aVh" secondAttribute="trailing" constant="8" id="HTW-4u-dkS"/>
                             <constraint firstItem="2hi-g2-1mv" firstAttribute="top" secondItem="brm-Xp-0cK" secondAttribute="bottom" constant="75" id="Ri2-jA-QxF"/>
+                            <constraint firstItem="R4Y-gG-HKt" firstAttribute="top" secondItem="4Ea-cu-aVh" secondAttribute="bottom" constant="8" id="W22-Fl-CgK"/>
                             <constraint firstAttribute="trailing" secondItem="2hi-g2-1mv" secondAttribute="trailing" constant="12" id="Xub-4t-vc6"/>
                             <constraint firstItem="brm-Xp-0cK" firstAttribute="centerX" secondItem="eAj-Pf-Pdh" secondAttribute="centerX" id="in9-fH-WuV"/>
+                            <constraint firstItem="4Ea-cu-aVh" firstAttribute="leading" secondItem="eAj-Pf-Pdh" secondAttribute="leading" constant="8" id="iu4-VH-Yq7"/>
                             <constraint firstItem="Dfv-tr-73M" firstAttribute="centerX" secondItem="eAj-Pf-Pdh" secondAttribute="centerX" id="riT-R0-gsY"/>
                             <constraint firstItem="2hi-g2-1mv" firstAttribute="leading" secondItem="eAj-Pf-Pdh" secondAttribute="leading" constant="12" id="sDt-ze-Xmn"/>
                             <constraint firstAttribute="trailing" secondItem="Dfv-tr-73M" secondAttribute="trailing" constant="12" id="vF6-I0-k7C"/>
@@ -258,6 +267,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="EnterButton" destination="brm-Xp-0cK" id="WOb-7P-TkD"/>
+                        <outlet property="signedInUserLabel" destination="4Ea-cu-aVh" id="i30-Lh-Ide"/>
                         <outlet property="textField" destination="Dfv-tr-73M" id="n6D-9Y-9h4"/>
                         <outlet property="textView" destination="2hi-g2-1mv" id="uiL-qY-sG4"/>
                     </connections>

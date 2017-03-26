@@ -79,9 +79,4 @@ class SignUpViewController: UIViewController {
 
         self.nameTextField.becomeFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }

@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var EnterButton: UIButton!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var signedInUserLabel: UILabel!
     
     //==================================================
     // MARK: - Actions
@@ -45,11 +46,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        signedInUserLabel.text = "Signed In User: \(FirebaseManager.getSignedInUsersEmail())"
     }
 }

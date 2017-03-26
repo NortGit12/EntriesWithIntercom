@@ -39,6 +39,10 @@ class FirebaseManager {
         }
     }
     
+    static func getSignedInUsersEmail() -> String {
+        return FIRAuth.auth()?.currentUser?.email ?? "unknown"
+    }
+    
     static func signInWithEmail(_ email: String, password: String, viewController: UIViewController, completion: (() -> Void)? = nil) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in

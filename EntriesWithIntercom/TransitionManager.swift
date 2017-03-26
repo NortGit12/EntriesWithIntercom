@@ -17,8 +17,10 @@ class TransitionManager {
     
     static func transitionToViewController(sourceViewController: UIViewController, destinationStoryboardName: String, destinationViewControllerIdentifier: String) {
         
-        let storyboard = UIStoryboard(name: destinationStoryboardName, bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: destinationViewControllerIdentifier)
-        sourceViewController.present(destinationViewController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: destinationStoryboardName, bundle: nil)
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: destinationViewControllerIdentifier)
+            sourceViewController.present(destinationViewController, animated: true, completion: nil)
+        }
     }
 }

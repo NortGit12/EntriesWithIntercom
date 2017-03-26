@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jeff Norton. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 class SignInViewController: UIViewController {
@@ -48,12 +49,8 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if FIRAuth.auth()?.currentUser != nil {
+            TransitionManager.transitionToViewController(sourceViewController: self, destinationStoryboardName: "Main", destinationViewControllerIdentifier: "MainViewNagivationController")
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
