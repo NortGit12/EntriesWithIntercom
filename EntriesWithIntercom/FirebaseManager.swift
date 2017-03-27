@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import Intercom
 import UIKit
 
 class FirebaseManager {
@@ -56,6 +57,10 @@ class FirebaseManager {
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 errorAlertController.addAction(okAction)
                 viewController.present(errorAlertController, animated: true, completion: nil)
+            }
+            
+            if let user = user {
+                Intercom.registerUser(withUserId: user.uid)
             }
             
             if let completion = completion {

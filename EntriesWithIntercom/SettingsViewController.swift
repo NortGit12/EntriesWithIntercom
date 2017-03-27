@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import Intercom
 import UIKit
 
 class SettingsViewController: UIViewController {
@@ -23,6 +24,8 @@ class SettingsViewController: UIViewController {
         
         do {
             try FIRAuth.auth()?.signOut()
+            
+            Intercom.reset()
             
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let signInViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInViewController")

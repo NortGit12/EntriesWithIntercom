@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import Intercom
 import UIKit
 import CoreData
 
@@ -18,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Firebase configuration
         FIRApp.configure()
+        
+        // Intercom configuration
+        Intercom.setApiKey("ios_sdk-8a2fd7615a177982697d9682e74f0583171aebd7", forAppId: "khb9khm0")
         
         return true
     }
